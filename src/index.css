@@ -1,1 +1,47 @@
 
+:root {
+  
+  --color-bg-header: #1890FF;
+  --color-bg-page: #ffF;
+  --color-bg-card-find: #E6F7FF;
+  --color-bg-card-git: #F5F5F5;
+  --color-bg-card-info: #fff;
+  
+  --color-border-primary: #1890FF;
+  --color-border-secundary: #D9D9D9;
+  --color-border-tertiary: #E6F7FF;
+
+  --color-placeholder: #BFBFBF;
+
+  --color-font-primary: #fff;
+  --color-font-secundary: #000;
+  --color-font-tertiary: #1890FF;
+  --color-font-quartenary: #7E7E7E;
+
+  --color-btn-bg: #1890FF;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+
+.git-container{
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto; 
+}
+
+.git-btn {
+  height: 40px;
+  width: 101px;
+  color: var(--color-font-primary);
+  font-size: 16px;
+  background-color: var(--color-btn-bg);
+  border-radius: 4px;
+  border: solid var(--color-border-primary);
+  cursor: pointer;
+}

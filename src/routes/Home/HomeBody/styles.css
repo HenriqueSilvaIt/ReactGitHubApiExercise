@@ -1,0 +1,17 @@
+
+.git-home-content {
+    margin-top: 27px;
+}
+
+.git-btn-start {
+    margin-top: 27px;
+}
+
+.git-home-content h1 {
+    font-size: 48px;
+}
+
+.git-home-content h4 {
+    font-size: 24px;
+    color: var(--color-font-quartenary);
+}
