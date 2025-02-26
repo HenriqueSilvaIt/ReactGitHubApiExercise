@@ -11,3 +11,8 @@ h1 {
     font-size: 24px;
     font-weight: 500;
 }
+
+a, a:hover {
+
+    text-decoration: unset;
+}
