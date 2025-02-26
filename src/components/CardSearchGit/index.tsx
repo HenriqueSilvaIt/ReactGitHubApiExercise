@@ -15,7 +15,7 @@ export default function CardSearchGit() {
     const [profile, setProfile] = useState<ProfileDTO | undefined>();
     const [formData, setFormData] = useState<FormData>({ name: "" });
     const [error, setError] = useState<string | undefined>();
-
+    const [formSubmitted, setFormSubmitted] = useState(false);
 
     function handleInputChange(event: any) {
         /*const value = event.target.value;
@@ -26,24 +26,39 @@ export default function CardSearchGit() {
 
     }
 
+
+ 
     function handleFormSubmit(event: any) {
         event.preventDefault();
-
-    
-
+        setFormSubmitted(true); 
+      
+    }
+    useEffect(() => {
+        if (formSubmitted && formData.name) { // Verifica se o formulário foi enviado e se há um nome
             profileService.findByName(formData.name)
-                .then(response => { /* tinha faltado o then por isso estava dando undefinied*/
+                .then(response => {
                     setProfile(response.data);
-                }).catch(error => {
                 
-                          setError("Erro ao buscar usuário");
-                        
-                     
+                    setFormSubmitted(false); // Reseta o estado após a busca
+                })
+                .catch(error => {
+                    if (error.response.status === 404){
+                    setError("Erro ao buscar usuário");
+                }
+                    setFormSubmitted(false); // Reseta o estado em caso de erro
+                });
+        }else if(formSubmitted && !formData.name){
+            setError("Por favor, insira um nome.");
+      
+            setFormSubmitted(false);
+        } 
+    }, [formSubmitted, formData.name]);
 
-    })  
-    
-        }
 
+  
+
+ 
+   
         return (
 
             <>
