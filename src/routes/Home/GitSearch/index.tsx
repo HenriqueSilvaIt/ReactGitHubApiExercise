@@ -14,11 +14,10 @@ export default function GitSearch() {
         <>
             <section>
             <CardSearchGit/>
-      
-            { profile && <CardProfileGit profile= {profile} />} 
-             
-             
-                 
+        
+   
+ 
+ 
             
             </section>
         </>
