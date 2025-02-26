@@ -8,6 +8,7 @@
     display: flex;
     align-items: center;
     border-radius: 8px;
+    padding-left:  24px;
 
 }
 
@@ -21,7 +22,6 @@
     border-radius: 6px;
     margin-right: 38px;
 
-
 }
 
 .git-card-profile-form form {
@@ -32,7 +32,7 @@
 
     width: 247px;
     height: 247px;
-    margin-left: 38px;
+
 
 }
 

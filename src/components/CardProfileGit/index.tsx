@@ -21,7 +21,6 @@ export default function CardProfileGit({ profile }: Props) {
                         </div>
                         <div className="git-card-profile-itens">
                             <p>Perfil:</p>
-
                             <a>
                                 {profile.html_url}
                             </a>
