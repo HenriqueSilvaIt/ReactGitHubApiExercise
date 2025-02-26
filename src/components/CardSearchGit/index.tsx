@@ -42,12 +42,12 @@ export default function CardSearchGit() {
                     setFormSubmitted(false); // Reseta o estado após a busca
                 })
                 .catch(error => {
-                    if (error.response.status === 404){
+                    if (error.response.status === 404){ /* se o retorno do get da na api for 404 */
                     setError("Erro ao buscar usuário");
                 }
                     setFormSubmitted(false); // Reseta o estado em caso de erro
                 });
-        }else if(formSubmitted && !formData.name){
+        }else if(formSubmitted && !formData.name){ // se existir o conteúdo no botão (formSubmited) e n existir o form data name
             setError("Por favor, insira um nome.");
       
             setFormSubmitted(false);
