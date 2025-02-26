@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import './style.css';
-import axios from 'axios';
 import { ProfileDTO } from '../../models/ProfileDTO';
 import CardProfileGit from '../CardProfileGit';
 import * as profileService from '../../services/profile-service';
@@ -16,7 +15,6 @@ export default function CardSearchGit() {
     const [profile, setProfile] = useState<ProfileDTO | undefined>();
     const [formData, setFormData] = useState<FormData>({ name: "" });
     const [error, setError] = useState<string | undefined>();
-    const [loading, setLoading] = useState(false); // Add loading state
 
 
     function handleInputChange(event: any) {
@@ -30,25 +28,19 @@ export default function CardSearchGit() {
 
     function handleFormSubmit(event: any) {
         event.preventDefault();
-        setLoading(true); // Set loading to true
-        setError(undefined); // Clear previous errors
-        setProfile(undefined); //clear previous profile
+
     
 
             profileService.findByName(formData.name)
                 .then(response => { /* tinha faltado o then por isso estava dando undefinied*/
                     setProfile(response.data);
-                    setLoading(false); // Set loading to false
                 }).catch(error => {
-                    if (error.response) {
-                     
-                        if (error.response.status === 4044) {
-                          setError("Usuário não encontrado");
-                        } else {
+                
                           setError("Erro ao buscar usuário");
-                        }
-                     } 
-    });
+                        
+                     
+
+    })  
     
         }
 
@@ -74,16 +66,8 @@ export default function CardSearchGit() {
                     
                     </form>
 
-
-                    {loading ?  <p>Carregando...</p>:
-                    <h2>Resultado:</h2>} {/*loading indicator*/}
-                   
-                    { profile ? (
-    <CardProfileGit profile={profile} />
-  ) : (
-    error && <h1>{error}</h1>
-  )
-}
+                    {profile ? <CardProfileGit profile={profile} />:
+                    <h2>{error}</h2>}
             
                   </div>
             </>
