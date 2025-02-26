@@ -1,22 +1,26 @@
 
 .git-card-profile{
-    margin-top: 54px;
+    
     height: 334px;
     width: 1251px;
     background-color: var(--color-bg-card-git);
-    padding: 43px 35px 44px 38px;
+    margin-top: 54px;
     display: flex;
     align-items: center;
+    border-radius: 8px;
 
 }
 
 .git-card-profile-form{
-    margin: 0 35px 0  29px;
-    width: 902px;
+
+    width: 870px;
+    margin-left:35px;
     height: 247px;
     background-color: var(--color-bg-card-info);
     border: 1px solid var(--color-border-secundary);
     border-radius: 6px;
+    margin-right: 38px;
+
 
 }
 
@@ -28,33 +32,52 @@
 
     width: 247px;
     height: 247px;
+    margin-left: 38px;
 
 }
 
-.git-card-profile-title {
+.git-card-profile-title  {
     font-size: 20px;
     font-weight: 500;
     color: var(--color-font-tertiary);
+    margin-bottom: 19px;
+}
+
+
+
+.git-card-profile-values {
+    font-weight: 0;
+
 }
 
 .git-card-profile-values{
+    padding-left: 5px;
+    font-weight: 0;
+    font-size: 16px;
+    color: var(--color-font-quartenary);
+}
+
+.git-card-profile-itens a {
+    padding-left: 5px;
+    font-size: 16px;
+    color: blue;
 
 }
 
 .git-card-profile-itens p{
-    font-weight: 700;
-    font-size: 16px;
-    color: var(--color-border-quartenary);
+    
+ font-weight: 700;   
 }
 
 .git-card-profile-itens {
+    color: var(--color-font-quartenary);
+    display:flex; 
     margin-bottom: 5px;
+    padding: 8px 10px;
     font-size: 16px;
     width: 600px;
     height: 40px;
-    font-weight: 700;
     border-radius: 4px;
-    color: var(--color-border-quartenary);
     border: 1px solid var(--color-border-secundary);
 
 
