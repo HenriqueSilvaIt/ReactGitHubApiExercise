@@ -8,7 +8,6 @@ import { ProfileDTO } from '../../../models/ProfileDTO';
 export default function GitSearch() {
 
 
-    const [profile, setProfile] = useState<ProfileDTO>();
 
     return (
         <>
